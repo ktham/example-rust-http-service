@@ -1,0 +1,14 @@
+# MacOS
+*.DS_Store
+
+# Ignore Git
+.git/
+
+# Ignore IDE files
+.idea/
+
+# Ignore direnv files
+.direnv/
+
+# Ignore build
+target/
