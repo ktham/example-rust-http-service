@@ -1,4 +1,4 @@
-name: CI
+name: build
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
 
 jobs:
   test:
+    name: Run tests
     runs-on: ubuntu-latest
     permissions:
       # Needed for actions/checkout
@@ -22,8 +23,9 @@ jobs:
       - name: Run tests
         run: cargo test --all
 
-  build:
+  image:
     name: "Build Image"
+    needs: [test]
     runs-on: ubuntu-latest
     permissions:
       # Needed for actions/checkout
